@@ -41,11 +41,16 @@ This system allows users to create and manage quotes for gas station constructio
    cp .env.example .env
    ```
 
-4. Run the database migrations:
+4. Initialize the database with demo data:
 
    ```bash
-   npm run db:migrate
+   npx tsx scripts/initialize-database.ts
    ```
+
+   This script will:
+   - Create all necessary database tables
+   - Seed the database with demo users, quotes, and components
+   - Set up construction divisions and items
 
 5. Start the development server:
 

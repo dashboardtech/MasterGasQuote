@@ -568,7 +568,7 @@ async function seedDivision3Items(divisionId: number) {
 }
 
 // Main function to run the seeding
-async function main() {
+export async function main() {
   try {
     // Seed divisions first
     const divisions = await seedConstructionDivisions();
