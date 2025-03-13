@@ -282,12 +282,12 @@ export default function FuelStationQuote() {
 
   return (
     <div className="container mx-auto p-6 max-w-7xl bg-gray-50 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6 text-gray-800 pb-3 border-b border-gray-200">Fuel Station Dynamic Quoting System</h1>
+      <h1 className="text-xl font-bold mb-4 text-gray-800 pb-2 border-b border-gray-200">Fuel Station Dynamic Quoting System</h1>
       
       {/* Component Selection Section */}
-      <div className="bg-white shadow-sm rounded-lg p-3 mb-3 border border-gray-100">
-        <h2 className="text-base font-semibold mb-3 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-blue-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">
+      <div className="bg-white shadow-sm rounded-lg p-2 mb-2 border border-gray-100">
+        <h2 className="text-sm font-semibold mb-2 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-blue-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">
             <title>Add icon</title>
             <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
           </svg>
@@ -295,7 +295,7 @@ export default function FuelStationQuote() {
         </h2>
         
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="component-type">
+          <label className="block text-xs font-medium text-gray-700 mb-2" htmlFor="component-type">
             Select Component Type
           </label>
           <select
@@ -330,14 +330,14 @@ export default function FuelStationQuote() {
                         {selectedType}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-600 mb-4 line-clamp-2">{component.description}</p>
+                    <p className="text-xs text-gray-600 mb-4 line-clamp-2">{component.description}</p>
                     
                     {/* Display component specifications */}
-                    <div className="text-sm mb-4 p-3 bg-gray-50 rounded-md border border-gray-100">
+                    <div className="text-xs mb-4 p-3 bg-gray-50 rounded-md border border-gray-100">
                       {getCapacity(specs) !== undefined && (
                         <div className="flex items-baseline mb-1">
                           <span className="font-medium text-gray-700 mr-1">Capacity:</span> 
-                          <span className="text-gray-800 text-sm">{getCapacity(specs)} {getUnitOfMeasure(specs) || 'units'}</span>
+                          <span className="text-gray-800 text-xs">{getCapacity(specs)} {getUnitOfMeasure(specs) || 'units'}</span>
                         </div>
                       )}
                       {getDimensions(specs) !== undefined && (() => {
@@ -345,14 +345,14 @@ export default function FuelStationQuote() {
                         return dimensions ? (
                           <div className="flex items-baseline mb-1">
                             <span className="font-medium text-gray-700 mr-1">Dimensions:</span>
-                            <span className="text-gray-800 text-sm">{dimensions.length}L × {dimensions.width}W × {dimensions.height}H</span>
+                            <span className="text-gray-800 text-xs">{dimensions.length}L × {dimensions.width}W × {dimensions.height}H</span>
                           </div>
                         ) : null;
                       })()}
                       {getMaterial(specs) !== undefined && (
                         <div className="flex items-baseline mb-1">
                           <span className="font-medium text-gray-700 mr-1">Material:</span>
-                          <span className="text-gray-800 text-sm">{getMaterial(specs)}</span>
+                          <span className="text-gray-800 text-xs">{getMaterial(specs)}</span>
                         </div>
                       )}
                     </div>
@@ -361,7 +361,7 @@ export default function FuelStationQuote() {
                       <div className="font-semibold text-lg text-gray-900">{formatCurrency(component.price)}</div>
                       <button
                         type="button"
-                        className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors flex items-center"
+                        className="bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-700 transition-colors flex items-center"
                         onClick={() => handleSelectComponent(component)}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -380,9 +380,9 @@ export default function FuelStationQuote() {
       </div>
       
       {/* Selected Components Section */}
-      <div className="bg-white shadow-sm rounded-lg p-3 mb-3 border border-gray-100">
-        <h2 className="text-base font-semibold mb-3 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">
+      <div className="bg-white shadow-sm rounded-lg p-2 mb-2 border border-gray-100">
+        <h2 className="text-sm font-semibold mb-2 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">
             <title>Selected components</title>
             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
@@ -396,7 +396,7 @@ export default function FuelStationQuote() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
             </svg>
             <p className="text-gray-500 text-lg">No components selected yet.</p>
-            <p className="text-gray-400 text-sm mt-2">Use the component selection panel above to add items to your quote.</p>
+            <p className="text-gray-400 text-xs mt-2">Use the component selection panel above to add items to your quote.</p>
           </div>
         ) : (
           <div className="overflow-x-auto shadow-sm rounded-lg border border-gray-200">
@@ -414,13 +414,13 @@ export default function FuelStationQuote() {
               <tbody className="divide-y divide-gray-200 bg-white">
                 {selectedComponents.map((item, index) => (
                   <tr key={`${item.component.id}-${index}`} className="hover:bg-gray-50 transition-colors">
-                    <td className="py-3 px-4 text-sm font-medium text-gray-900 whitespace-nowrap">{item.component.name}</td>
-                    <td className="py-3 px-4 text-sm text-gray-600 whitespace-nowrap">
+                    <td className="py-2 px-3 text-xs font-medium text-gray-900 whitespace-nowrap">{item.component.name}</td>
+                    <td className="py-2 px-3 text-xs text-gray-600 whitespace-nowrap">
                       <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                         {item.component.type}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600 whitespace-nowrap">
+                    <td className="py-2 px-3 text-xs text-gray-600 whitespace-nowrap">
                       <div className="flex justify-center items-center">
                         <button
                           type="button"
@@ -430,7 +430,7 @@ export default function FuelStationQuote() {
                         >
                           <span className="font-medium text-xs">−</span>
                         </button>
-                        <span className="px-3 py-0.5 border-t border-b border-gray-300 min-w-[32px] text-center bg-white text-sm">{item.quantity}</span>
+                        <span className="px-3 py-0.5 border-t border-b border-gray-300 min-w-[32px] text-center bg-white text-xs">{item.quantity}</span>
                         <button
                           type="button"
                           className="bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-700 px-1.5 py-0.5 rounded-r-md transition-colors"
@@ -440,12 +440,12 @@ export default function FuelStationQuote() {
                         </button>
                       </div>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-900 font-medium text-right whitespace-nowrap">{formatCurrency(item.component.price)}</td>
-                    <td className="py-3 px-4 text-sm text-gray-900 font-medium text-right whitespace-nowrap">{formatCurrency(item.component.price * item.quantity)}</td>
-                    <td className="py-3 px-4 text-sm text-center whitespace-nowrap">
+                    <td className="py-2 px-3 text-xs text-gray-900 font-medium text-right whitespace-nowrap">{formatCurrency(item.component.price)}</td>
+                    <td className="py-2 px-3 text-xs text-gray-900 font-medium text-right whitespace-nowrap">{formatCurrency(item.component.price * item.quantity)}</td>
+                    <td className="py-2 px-3 text-xs text-center whitespace-nowrap">
                       <button
                         type="button"
-                        className="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded-md text-white bg-red-600 hover:bg-red-700 transition-colors focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-red-500"
+                        className="inline-flex items-center px-1.5 py-0.5 border border-transparent text-xs font-medium rounded text-white bg-red-600 hover:bg-red-700 transition-colors focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-red-500"
                         onClick={() => handleRemoveComponent(index)}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">
@@ -465,9 +465,9 @@ export default function FuelStationQuote() {
       
       {/* Required Dependencies Section */}
       {calculatedDependencies.length > 0 && (
-        <div className="bg-white shadow-sm rounded-lg p-3 mb-3 border border-gray-100">
-          <h2 className="text-base font-semibold mb-3 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-amber-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">
+        <div className="bg-white shadow-sm rounded-lg p-2 mb-2 border border-gray-100">
+          <h2 className="text-sm font-semibold mb-2 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-amber-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">
               <title>Required dependencies</title>
               <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
             </svg>
@@ -489,16 +489,16 @@ export default function FuelStationQuote() {
               <tbody className="divide-y divide-gray-200 bg-white">
                 {calculatedDependencies.map((item, index) => (
                   <tr key={`dep-${item.component.id}-${index}`} className="hover:bg-gray-50 transition-colors">
-                    <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{item.component.name}</td>
-                    <td className="py-4 px-6 text-sm text-gray-600 whitespace-nowrap">
+                    <td className="py-4 px-6 text-xs font-medium text-gray-900 whitespace-nowrap">{item.component.name}</td>
+                    <td className="py-4 px-6 text-xs text-gray-600 whitespace-nowrap">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
                         {item.component.type}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600 text-center whitespace-nowrap">{item.quantity}</td>
-                    <td className="py-3 px-4 text-sm text-gray-900 font-medium text-right whitespace-nowrap">{formatCurrency(item.component.price)}</td>
-                    <td className="py-3 px-4 text-sm text-gray-900 font-medium text-right whitespace-nowrap">{formatCurrency(item.component.price * item.quantity)}</td>
-                    <td className="py-3 px-4 text-sm text-center whitespace-nowrap">
+                    <td className="py-2 px-3 text-xs text-gray-600 text-center whitespace-nowrap">{item.quantity}</td>
+                    <td className="py-2 px-3 text-xs text-gray-900 font-medium text-right whitespace-nowrap">{formatCurrency(item.component.price)}</td>
+                    <td className="py-2 px-3 text-xs text-gray-900 font-medium text-right whitespace-nowrap">{formatCurrency(item.component.price * item.quantity)}</td>
+                    <td className="py-2 px-3 text-xs text-center whitespace-nowrap">
                       {item.required ? (
                         <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">
@@ -527,9 +527,9 @@ export default function FuelStationQuote() {
       
       {/* Tank Pump Assignments Section */}
       {tankPumpAssignments.length > 0 && (
-        <div className="bg-white shadow-sm rounded-lg p-3 mb-3 border border-gray-100">
-          <h2 className="text-base font-semibold mb-3 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">
+        <div className="bg-white shadow-sm rounded-lg p-2 mb-2 border border-gray-100">
+          <h2 className="text-sm font-semibold mb-2 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">
               <title>Tank-pump assignments</title>
               <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
@@ -551,7 +551,7 @@ export default function FuelStationQuote() {
               return (
                 <div key={`assign-${assignment.tankId}`} className="border border-gray-200 rounded-lg p-3 bg-gray-50 hover:shadow-md transition-shadow">
                   <div className="flex items-center mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
                       <title>Tank</title>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
@@ -565,12 +565,12 @@ export default function FuelStationQuote() {
                           <title>Compatibility notes</title>
                           <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                         </svg>
-                        <p className="text-sm text-yellow-700">{assignment.compatibilityNotes}</p>
+                        <p className="text-xs text-yellow-700">{assignment.compatibilityNotes}</p>
                       </div>
                     </div>
                   )}
                   
-                  <h4 className="font-medium text-sm text-gray-500 uppercase tracking-wider mb-3 flex items-center">
+                  <h4 className="font-medium text-xs text-gray-500 uppercase tracking-wider mb-3 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
                       <title>Compatible pumps</title>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -582,10 +582,10 @@ export default function FuelStationQuote() {
                     {pumpComponents.map(pump => (
                       <div key={pump.id} className="border border-gray-200 rounded-lg p-4 bg-white hover:shadow-sm transition-shadow">
                         <h4 className="font-medium text-gray-900 mb-2">{pump.name}</h4>
-                        <p className="text-sm text-gray-600 mb-3">{pump.description}</p>
+                        <p className="text-xs text-gray-600 mb-3">{pump.description}</p>
                         <div className="flex justify-between items-center mt-2 pt-2 border-t border-gray-100">
                           <span className="text-xs text-gray-500">Unit Price</span>
-                          <span className="text-sm font-semibold text-gray-900">{formatCurrency(pump.price)}</span>
+                          <span className="text-xs font-semibold text-gray-900">{formatCurrency(pump.price)}</span>
                         </div>
                       </div>
                     ))}
@@ -599,9 +599,9 @@ export default function FuelStationQuote() {
       
       {/* Soil Movement Calculations Section */}
       {soilCalculations && (
-        <div className="bg-white shadow-sm rounded-lg p-3 mb-3 border border-gray-100">
-          <h2 className="text-base font-semibold mb-3 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+        <div className="bg-white shadow-sm rounded-lg p-2 mb-2 border border-gray-100">
+          <h2 className="text-sm font-semibold mb-2 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
               <title>Soil calculations</title>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
@@ -611,48 +611,48 @@ export default function FuelStationQuote() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div className="border border-gray-200 rounded-lg p-3 bg-gradient-to-b from-blue-50 to-white hover:shadow-md transition-shadow">
               <div className="flex items-center mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
                   <title>Excavation</title>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z" />
                 </svg>
                 <h3 className="font-medium text-blue-700">Excavation Volume</h3>
               </div>
               <div className="text-xl font-bold text-gray-900 mb-1">{soilCalculations.excavationVolume}</div>
-              <div className="text-sm font-medium text-gray-500">cubic yards</div>
+              <div className="text-xs font-medium text-gray-500">cubic yards</div>
             </div>
             
             <div className="border border-gray-200 rounded-lg p-3 bg-gradient-to-b from-green-50 to-white hover:shadow-md transition-shadow">
               <div className="flex items-center mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
                   <title>Backfill</title>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                 </svg>
                 <h3 className="font-medium text-green-700">Backfill Volume</h3>
               </div>
               <div className="text-xl font-bold text-gray-900 mb-1">{soilCalculations.backfillVolume.toFixed(2)}</div>
-              <div className="text-sm font-medium text-gray-500">cubic yards</div>
+              <div className="text-xs font-medium text-gray-500">cubic yards</div>
               <div className="mt-3 flex items-center bg-green-50 p-2 rounded-md">
                 <span className="text-xs uppercase tracking-wider text-green-800 font-semibold">Material:</span>
-                <span className="ml-2 text-sm text-green-900">{soilCalculations.backfillMaterial}</span>
+                <span className="ml-2 text-xs text-green-900">{soilCalculations.backfillMaterial}</span>
               </div>
             </div>
             
             <div className="border border-gray-200 rounded-lg p-3 bg-gradient-to-b from-red-50 to-white hover:shadow-md transition-shadow">
               <div className="flex items-center mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
                   <title>Disposal</title>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                 </svg>
                 <h3 className="font-medium text-red-700">Disposal Volume</h3>
               </div>
               <div className="text-xl font-bold text-gray-900 mb-1">{soilCalculations.disposalVolume}</div>
-              <div className="text-sm font-medium text-gray-500">cubic yards</div>
+              <div className="text-xs font-medium text-gray-500">cubic yards</div>
             </div>
           </div>
           
           <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 flex justify-between items-center">
             <div className="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
                 <title>Cost estimate</title>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -665,8 +665,8 @@ export default function FuelStationQuote() {
       
       {/* Quote Summary Section */}
       <div className="bg-white shadow-md rounded-lg p-4 border border-gray-100">
-        <h2 className="text-base font-semibold mb-3 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+        <h2 className="text-sm font-semibold mb-2 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
             <title>Quote summary</title>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
@@ -676,7 +676,7 @@ export default function FuelStationQuote() {
         <div className="border-t border-gray-200 py-4 mb-4 space-y-3">
           <div className="flex justify-between items-center p-1.5 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors">
             <div className="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
                 <title>Selected components</title>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -689,7 +689,7 @@ export default function FuelStationQuote() {
           
           <div className="flex justify-between items-center p-1.5 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors">
             <div className="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
                 <title>Required dependencies</title>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
@@ -706,7 +706,7 @@ export default function FuelStationQuote() {
           {soilCalculations && (
             <div className="flex justify-between items-center p-1.5 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors">
               <div className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
                   <title>Soil movement</title>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                 </svg>
@@ -719,7 +719,7 @@ export default function FuelStationQuote() {
         
         <div className="bg-purple-50 border border-purple-100 rounded-lg p-4 flex justify-between items-center">
           <div className="font-semibold text-xl text-purple-900 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img">
               <title>Total quote amount</title>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
